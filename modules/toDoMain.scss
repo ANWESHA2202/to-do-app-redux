@@ -1,0 +1,137 @@
+.todoMain {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  .addTaskContainer {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(215, 243, 247);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .addTaskContent {
+      margin-top: 5rem;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      .addTaskForm {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        p {
+          color: rgb(252, 74, 74);
+        }
+      }
+    }
+  }
+  .manageTasksContainer {
+    width: calc(100vw - 40%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .manageTasksContent {
+      width: 90%;
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      .titleSection {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-end;
+      }
+      .tabsSection {
+        display: flex;
+        gap: 2rem;
+        .tabButton {
+          min-width: 120px;
+        }
+        .inActiveTabButton {
+          color: #002968;
+          background: whitesmoke;
+        }
+        @media only screen and (max-width: 600px) {
+          width: 90vw;
+          overflow-x: auto;
+          .tabButton {
+            min-width: 100px;
+          }
+        }
+      }
+
+      .tabsSection::-webkit-scrollbar {
+        display: none;
+      }
+
+      .activeTabContainer {
+        display: flex;
+        width: 85%;
+        min-height: 50vh;
+        overflow-y: auto;
+
+        .tabContent {
+          width: 0;
+          height: 100%;
+          transition: width 0.5s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          .taskTitle {
+            display: flex;
+            gap: 0.3rem;
+            align-items: flex-end;
+            input[type="checkbox"] {
+              cursor: pointer;
+              accent-color: #002968;
+              :hover {
+                accent-color: #002968;
+              }
+            }
+          }
+          .noDataTab {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        @media only screen and (max-width: 600px) {
+          width: 95%;
+        }
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      width: 100vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .addTaskContainer {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .addTaskContent {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .addTaskForm {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
